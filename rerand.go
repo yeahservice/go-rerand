@@ -218,6 +218,8 @@ func (g *Generator) Generate() string {
 			log.Fatalf("%v: %v", i.Op, "bad operation")
 		case syntax.InstFail:
 			// nothing
+	        case syntax.InstNop:
+			// nothing
 		case syntax.InstRune:
 			g.mu.Lock()
 			r := i.runeGenerator.Generate()
